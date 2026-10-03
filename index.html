@@ -1,879 +1,451 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
-```
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocking Hits con Mhitzy Chriss | Radio Nuevo Oasis</title>
+<meta name="description" content="Rocking Hits con Mhitzy Chriss, el programa de Radio Nuevo Oasis. Rock & Pop de los 80s, 90s y 2000s.">
+<meta property="og:title" content="Rocking Hits con Mhitzy Chriss | Radio Nuevo Oasis">
+<meta property="og:description" content="Los grandes clásicos del rock & pop de los 80s, 90s y 2000s.">
+<meta property="og:image" content="Logo_Nuevo_Oasis.jpg">
+<link rel="icon" href="Logo_Nuevo_Oasis.jpg">
 
-<title>Radio Nuevo Oasis | Rock & Pop</title>
-
-<meta
-    name="description"
-    content="Radio Nuevo Oasis. Rock & Pop de los 80s, 90s y 2000s. Rocking Hits con Mhitzy Chriss."
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
-
-    /* =========================================
-       VARIABLES DE COLOR
-    ========================================= */
-
     :root {
         --verde: #8ADA57;
-        --verde-claro: #B5ED68;
-        --negro: #050505;
-        --gris: #111111;
-        --gris-claro: #bdbdbd;
-        --blanco: #ffffff;
+        --lima: #C8E465;
+        --negro: #000000;
+        --tinta: #14170f;
+        --papel: #f3f6e9;
+        --display: "Anton", "Impact", "Arial Narrow", sans-serif;
+        --texto: "DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     }
 
-
-    /* =========================================
-       RESET
-    ========================================= */
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-
-    html {
-        scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: var(--texto);
         background: var(--negro);
-        color: var(--blanco);
-        line-height: 1.6;
+        color: var(--papel);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
     }
 
-
-    /* =========================================
-       HERO
-    ========================================= */
-
-    .hero {
-        min-height: 100vh;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        text-align: center;
-
-        padding: 60px 20px;
-
-        background:
-            radial-gradient(
-                circle at center,
-                #202020 0%,
-                #0c0c0c 45%,
-                #000000 100%
-            );
-
-        position: relative;
-        overflow: hidden;
+    a:focus-visible, .btn:focus-visible {
+        outline: 3px solid var(--negro);
+        outline-offset: 3px;
     }
 
+    .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-    /* Efecto verde decorativo */
-
-    .hero::before {
-        content: "";
-
+    /* ---------- NAV ---------- */
+    .nav {
         position: absolute;
-
-        width: 500px;
-        height: 500px;
-
-        background: var(--verde);
-
-        border-radius: 50%;
-
-        filter: blur(160px);
-
-        opacity: 0.12;
-
-        z-index: 0;
+        top: 0; left: 0; right: 0;
+        z-index: 5;
+        padding: 22px 0;
     }
-
-
-    .hero-content {
-        position: relative;
-        z-index: 1;
-
-        max-width: 900px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    /* =========================================
-       LOGO
-    ========================================= */
-
-    .logo-container {
-
-        width: 310px;
-        height: 310px;
-
-        border-radius: 50%;
-
-        overflow: hidden;
-
-        margin-bottom: 35px;
-
-        box-shadow:
-            0 0 0 2px var(--verde),
-            0 0 45px rgba(138, 218, 87, 0.25);
-
-        background: var(--verde);
-    }
-
-
-    .logo-container img {
-
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-
-        display: block;
-    }
-
-
-    /* =========================================
-       TITULOS
-    ========================================= */
-
-    .eyebrow {
-
-        color: var(--verde);
-
-        font-size: 0.8rem;
-
-        font-weight: bold;
-
-        letter-spacing: 5px;
-
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand {
+        font-family: var(--display);
+        font-size: 1.25rem;
+        letter-spacing: 1px;
         text-transform: uppercase;
-
-        margin-bottom: 12px;
-    }
-
-
-    .hero h1 {
-
-        font-size: clamp(2.5rem, 8vw, 5.5rem);
-
-        line-height: 0.95;
-
-        font-weight: 900;
-
-        text-transform: uppercase;
-
-        letter-spacing: -2px;
-
-        margin-bottom: 20px;
-    }
-
-
-    .hero h1 span {
-        color: var(--verde);
-    }
-
-
-    .hero-description {
-
-        max-width: 650px;
-
-        color: #cfcfcf;
-
-        font-size: 1.1rem;
-
-        margin-bottom: 35px;
-    }
-
-
-    /* =========================================
-       BOTÓN
-    ========================================= */
-
-    .button {
-
-        display: inline-block;
-
-        padding: 15px 30px;
-
-        background: var(--verde);
-
-        color: #000000;
-
+        color: var(--negro);
         text-decoration: none;
-
-        font-weight: 900;
-
-        text-transform: uppercase;
-
-        letter-spacing: 1px;
-
-        border: 2px solid var(--verde);
-
-        transition: all 0.25s ease;
     }
-
-
-    .button:hover {
-
-        background: transparent;
-
-        color: var(--verde);
-
-        transform: translateY(-2px);
+    .nav-links { display: flex; gap: 26px; }
+    .nav-links a {
+        color: var(--negro);
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: border-color .2s;
     }
+    .nav-links a:hover { border-bottom-color: var(--negro); }
 
-
-    /* =========================================
-       VIDEO
-    ========================================= */
-
-    .video-section {
-
-        padding: 100px 20px;
-
-        background: #0b0b0b;
-    }
-
-
-    .container {
-
-        width: 100%;
-
-        max-width: 1050px;
-
-        margin: 0 auto;
-    }
-
-
-    .section-header {
-
-        text-align: center;
-
-        margin-bottom: 45px;
-    }
-
-
-    .section-label {
-
-        display: block;
-
-        color: var(--verde);
-
-        font-size: 0.75rem;
-
-        font-weight: bold;
-
-        letter-spacing: 4px;
-
-        text-transform: uppercase;
-
-        margin-bottom: 10px;
-    }
-
-
-    .section-header h2 {
-
-        font-size: clamp(2rem, 5vw, 3.5rem);
-
-        text-transform: uppercase;
-
-        line-height: 1;
-
-        font-weight: 900;
-    }
-
-
-    .section-header p {
-
-        margin-top: 15px;
-
-        color: #999;
-
-        font-size: 1rem;
-    }
-
-
-    /* =========================================
-       VIDEO DRIVE
-    ========================================= */
-
-    .video-wrapper {
-
+    /* ---------- HERO ---------- */
+    .hero {
         position: relative;
-
-        width: 100%;
-
-        aspect-ratio: 16 / 9;
-
-        background: #000;
-
-        border: 2px solid #242424;
-
-        box-shadow:
-            0 25px 70px rgba(0, 0, 0, 0.6);
-    }
-
-
-    .video-wrapper iframe {
-
-        position: absolute;
-
-        width: 100%;
-        height: 100%;
-
-        left: 0;
-        top: 0;
-
-        border: none;
-    }
-
-
-    /* =========================================
-       PROGRAMA
-    ========================================= */
-
-    .program-section {
-
-        padding: 100px 20px;
-
-        background: var(--verde);
-
-        color: #000000;
-
-        text-align: center;
-    }
-
-
-    .program-content {
-
-        max-width: 750px;
-
-        margin: 0 auto;
-    }
-
-
-    .program-label {
-
-        font-size: 0.75rem;
-
-        font-weight: 900;
-
-        letter-spacing: 4px;
-
-        text-transform: uppercase;
-
-        margin-bottom: 15px;
-    }
-
-
-    .program-section h2 {
-
-        font-size: clamp(2.2rem, 6vw, 4.5rem);
-
-        line-height: 0.95;
-
-        font-weight: 900;
-
-        text-transform: uppercase;
-
-        margin-bottom: 25px;
-    }
-
-
-    .program-section h3 {
-
-        font-size: 1.1rem;
-
-        text-transform: uppercase;
-
-        letter-spacing: 2px;
-
-        margin-bottom: 25px;
-    }
-
-
-    .program-section p {
-
-        font-size: 1.05rem;
-
-        max-width: 650px;
-
-        margin: 0 auto;
-    }
-
-
-    /* =========================================
-       SEPARADOR
-    ========================================= */
-
-    .divider {
-
-        width: 70px;
-
-        height: 5px;
-
-        background: #000000;
-
-        margin: 30px auto;
-    }
-
-
-    /* =========================================
-       SOBRE LA RADIO
-    ========================================= */
-
-    .about-section {
-
-        padding: 90px 20px;
-
-        background: #050505;
-
-        text-align: center;
-    }
-
-
-    .about-content {
-
-        max-width: 750px;
-
-        margin: 0 auto;
-    }
-
-
-    .about-section h2 {
-
-        font-size: clamp(2rem, 5vw, 3rem);
-
-        text-transform: uppercase;
-
-        margin-bottom: 25px;
-    }
-
-
-    .about-section h2 span {
-
-        color: var(--verde);
-    }
-
-
-    .about-section p {
-
-        color: #bdbdbd;
-
-        font-size: 1.05rem;
-
-        margin-bottom: 20px;
-    }
-
-
-    .music-tags {
-
+        min-height: 100vh;
         display: flex;
+        align-items: center;
+        padding: 130px 0 90px;
+        background: linear-gradient(100deg, var(--verde) 0%, var(--lima) 100%);
+        color: var(--negro);
+        overflow: hidden;
+    }
+    .hero .wrap {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        align-items: center;
+        gap: 40px;
+    }
+    .hero-kicker {
+        font-weight: 700;
+        font-size: 1.05rem;
+        margin-bottom: 14px;
+    }
+    .hero h1 {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(4.2rem, 13vw, 10.5rem);
+        line-height: 0.88;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        margin-bottom: 28px;
+    }
+    .hero h1 span { display: block; }
+    .hero h1 .outline {
+        color: transparent;
+        -webkit-text-stroke: 3px var(--negro);
+    }
+    .hero-by {
+        font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+        font-weight: 500;
+        margin-bottom: 14px;
+    }
+    .hero-by strong { font-weight: 700; border-bottom: 3px solid var(--negro); }
+    .hero-desc { max-width: 460px; font-size: 1.08rem; margin-bottom: 34px; }
 
-        flex-wrap: wrap;
+    .btn {
+        display: inline-block;
+        padding: 16px 32px;
+        background: var(--negro);
+        color: var(--verde);
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        border: 3px solid var(--negro);
+        border-radius: 999px;
+        transition: background .2s, color .2s, transform .2s;
+    }
+    .btn:hover { background: transparent; color: var(--negro); transform: translateY(-2px); }
 
-        justify-content: center;
+    .hero-logo { display: flex; justify-content: center; }
+    .logo-disc {
+        width: min(100%, 400px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 6px solid var(--negro);
+        box-shadow: 14px 14px 0 var(--negro);
+        animation: entrada 1.1s cubic-bezier(.2,.8,.2,1) both;
+    }
+    .logo-disc img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        gap: 10px;
-
-        margin-top: 35px;
+    @keyframes entrada {
+        from { opacity: 0; transform: rotate(-24deg) scale(.82); }
+        to   { opacity: 1; transform: rotate(0) scale(1); }
     }
 
-
-    .music-tags span {
-
-        border: 1px solid var(--verde);
-
+    /* ---------- CINTA ---------- */
+    .tape {
+        background: var(--negro);
         color: var(--verde);
+        border-bottom: 1px solid #1d2417;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 16px 0;
+    }
+    .tape-track {
+        display: inline-block;
+        font-family: var(--display);
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        animation: cinta 28s linear infinite;
+    }
+    .tape-track span { margin: 0 22px; }
+    .tape-track .sep { color: var(--lima); margin: 0; }
+    @keyframes cinta { to { transform: translateX(-50%); } }
 
-        padding: 8px 15px;
-
-        font-size: 0.75rem;
-
-        font-weight: bold;
-
-        letter-spacing: 1px;
-
+    /* ---------- VIDEO ---------- */
+    .video-section { padding: 110px 0; background: var(--negro); }
+    .video-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 36px;
+    }
+    .video-head h2 {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(2.6rem, 7vw, 5rem);
+        line-height: 0.95;
         text-transform: uppercase;
     }
-
-
-    /* =========================================
-       FOOTER
-    ========================================= */
-
-    footer {
-
-        background: #000000;
-
-        border-top: 1px solid #222;
-
-        padding: 35px 20px;
-
-        text-align: center;
-
-        color: #666;
-
-        font-size: 0.8rem;
+    .video-head p { color: #a9b39a; max-width: 340px; }
+    .video-head .ep {
+        display: inline-block;
+        background: var(--verde);
+        color: var(--negro);
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding: 4px 14px;
+        border-radius: 999px;
+        margin-bottom: 14px;
     }
 
+    .video-frame {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        background: #080a06;
+        border: 3px solid var(--verde);
+        border-radius: 18px;
+        box-shadow: 12px 12px 0 var(--lima);
+        overflow: hidden;
+    }
+    .video-frame iframe {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        border: 0;
+    }
 
-    footer strong {
+    /* ---------- PROGRAMA ---------- */
+    .program {
+        padding: 120px 0;
+        background: linear-gradient(100deg, var(--verde) 0%, var(--lima) 100%);
+        color: var(--negro);
+    }
+    .program .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+    .program h2 {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(3rem, 8vw, 6rem);
+        line-height: 0.92;
+        text-transform: uppercase;
+    }
+    .program h2 em { font-style: normal; display: block; font-size: 0.5em; margin-top: 14px; letter-spacing: 1px; }
+    .program-text h3 { font-size: 1.5rem; margin-bottom: 14px; }
+    .program-text p { font-size: 1.1rem; max-width: 480px; margin-bottom: 14px; }
 
+    .eras { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+    .era {
+        background: var(--negro);
         color: var(--verde);
+        font-family: var(--display);
+        font-size: 1.9rem;
+        padding: 6px 22px 4px;
+        border-radius: 12px;
     }
 
-
-    /* =========================================
-       RESPONSIVE
-    ========================================= */
-
-    @media (max-width: 600px) {
-
-        .hero {
-
-            min-height: 90vh;
-
-            padding: 40px 20px;
-        }
-
-
-        .logo-container {
-
-            width: 230px;
-
-            height: 230px;
-
-            margin-bottom: 30px;
-        }
-
-
-        .hero h1 {
-
-            font-size: 3rem;
-        }
-
-
-        .hero-description {
-
-            font-size: 0.95rem;
-        }
-
-
-        .video-section,
-        .about-section {
-
-            padding: 70px 15px;
-        }
-
-
-        .program-section {
-
-            padding: 70px 20px;
-        }
-
+    /* ---------- SOBRE LA RADIO ---------- */
+    .about { padding: 110px 0; background: var(--papel); color: var(--tinta); }
+    .about .wrap {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 60px;
+        align-items: center;
+    }
+    .about-logo {
+        width: min(100%, 280px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid var(--negro);
+        box-shadow: 10px 10px 0 var(--verde);
+        margin: 0 auto;
+    }
+    .about-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about h2 {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(2.4rem, 6vw, 4rem);
+        line-height: 1;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+    }
+    .about p { font-size: 1.1rem; max-width: 520px; margin-bottom: 14px; color: #3a4030; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .tags span {
+        border: 2px solid var(--negro);
+        border-radius: 999px;
+        padding: 6px 18px;
+        font-weight: 700;
+        font-size: 0.9rem;
     }
 
+    /* ---------- FOOTER ---------- */
+    footer { background: var(--negro); padding: 44px 0; border-top: 4px solid var(--verde); }
+    footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: #8a9480;
+        font-size: 0.9rem;
+    }
+    footer strong { color: var(--verde); font-family: var(--display); font-weight: 400; font-size: 1.2rem; letter-spacing: 1px; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 860px) {
+        .hero .wrap, .program .wrap, .about .wrap { grid-template-columns: 1fr; }
+        .hero { padding: 110px 0 70px; }
+        .hero-logo { order: -1; }
+        .logo-disc { width: min(78%, 300px); box-shadow: 9px 9px 0 var(--negro); }
+        .program, .about, .video-section { padding: 80px 0; }
+        .nav-links { gap: 16px; }
+    }
+    @media (max-width: 480px) {
+        .nav-brand { font-size: 1.05rem; }
+        .nav-links a { font-size: 0.85rem; }
+        .video-frame { box-shadow: 7px 7px 0 var(--lima); border-radius: 12px; }
+        footer .wrap { flex-direction: column; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .logo-disc, .tape-track { animation: none; }
+    }
 </style>
-```
-
 </head>
 
 <body>
 
-```
-<!-- =========================================
-     HERO / PORTADA
-========================================= -->
+<!-- NAVEGACIÓN -->
+<nav class="nav">
+    <div class="wrap">
+        <a href="#inicio" class="nav-brand">Nuevo Oasis</a>
+        <div class="nav-links">
+            <a href="#episodio">Episodio</a>
+            <a href="#programa">Programa</a>
+            <a href="#radio">La radio</a>
+        </div>
+    </div>
+</nav>
 
-<header class="hero">
-
-    <div class="hero-content">
-
-
-        <!--
-        ========================================
-        LOGO
-
-        Este código utiliza el archivo:
-
-        Portada.jpg
-
-        Debes subir Portada.jpg al mismo
-        repositorio donde está este index.html.
-        ========================================
-        -->
-
-        <div class="logo-container">
-
-            <img
-                src="Portada.jpg"
-                alt="Radio Nuevo Oasis - Rock & Pop"
-            >
-
+<!-- HERO -->
+<header class="hero" id="inicio">
+    <div class="wrap">
+        <div class="hero-text">
+            <p class="hero-kicker">Radio Nuevo Oasis presenta</p>
+            <h1>
+                <span>Rocking</span>
+                <span class="outline">Hits</span>
+            </h1>
+            <p class="hero-by">Con <strong>Mhitzy Chriss</strong></p>
+            <p class="hero-desc">
+                La buena música siempre encuentra el camino de regreso.
+            </p>
+            <a href="#episodio" class="btn">Ver el programa</a>
         </div>
 
-
-        <span class="eyebrow">
-            Radio musical
-        </span>
-
-
-        <h1>
-            Rocking <span>Hits</span>
-        </h1>
-
-
-        <p class="hero-description">
-
-            Los grandes clásicos del rock & pop
-            que marcaron generaciones.
-
-            <br>
-
-            80s · 90s · 2000s
-
-        </p>
-
-
-        <a
-            href="#programa"
-            class="button"
-        >
-            Ver programa
-        </a>
-
-
+        <div class="hero-logo">
+            <div class="logo-disc">
+                <img src="Logo_Nuevo_Oasis.jpg" alt="Logo de Radio Nuevo Oasis, Rock & Pop">
+            </div>
+        </div>
     </div>
-
 </header>
 
+<!-- CINTA -->
+<div class="tape" aria-hidden="true">
+    <div class="tape-track">
+        <span>Rock</span><span class="sep">&amp;</span><span>Pop</span><span class="sep">★</span>
+        <span>80s</span><span class="sep">★</span><span>90s</span><span class="sep">★</span><span>2000s</span><span class="sep">★</span>
+        <span>Rocking Hits</span><span class="sep">★</span><span>Nuevo Oasis</span><span class="sep">★</span>
+        <span>Rock</span><span class="sep">&amp;</span><span>Pop</span><span class="sep">★</span>
+        <span>80s</span><span class="sep">★</span><span>90s</span><span class="sep">★</span><span>2000s</span><span class="sep">★</span>
+        <span>Rocking Hits</span><span class="sep">★</span><span>Nuevo Oasis</span><span class="sep">★</span>
+    </div>
+</div>
 
-
-<!-- =========================================
-     VIDEO
-========================================= -->
-
-<section class="video-section">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-label">
-                Programa #01
-            </span>
-
-
-            <h2>
-                Rocking Hits
-            </h2>
-
-
-            <p>
-                Con Mhitzy Chriss
-            </p>
-
+<!-- VIDEO -->
+<section class="video-section" id="episodio">
+    <div class="wrap">
+        <div class="video-head">
+            <div>
+                <span class="ep">Programa #01</span>
+                <h2>Dale play<br>a Rocking Hits</h2>
+            </div>
+            <p>Mira el primer episodio completo con Mhitzy Chriss.</p>
         </div>
 
-
-        <!--
-        =================================================
-        VIDEO DE GOOGLE DRIVE
-        =================================================
-
-        AQUÍ DEBES COLOCAR EL ID DE TU VIDEO.
-
-        Ejemplo:
-
-        Tu enlace de Drive:
-
-        https://drive.google.com/file/d/
-        1ABC123XYZ456/view?usp=sharing
-
-        El ID es:
-
-        1ABC123XYZ456
-
-        Entonces debes reemplazar:
-
-        TU_ID_DEL_VIDEO
-
-        por:
-
-        1ABC123XYZ456
-
-        =================================================
-        -->
-
-
-        <div class="video-wrapper">
-
+        <div class="video-frame">
             <iframe
                 src="https://drive.google.com/file/d/18O8h6B1RUhVbtjOuzpgdUkMDEmpA_W36/preview"
                 allow="autoplay"
                 allowfullscreen
-                title="Rocking Hits con Mhitzy Chriss"
-            >
-            </iframe>
-
+                loading="lazy"
+                title="Rocking Hits con Mhitzy Chriss"></iframe>
         </div>
-
-
     </div>
-
 </section>
 
-
-
-<!-- =========================================
-     INFORMACIÓN DEL PROGRAMA
-========================================= -->
-
-<section
-    class="program-section"
-    id="programa"
->
-
-    <div class="program-content">
-
-
-        <div class="program-label">
-            Radio Nuevo Oasis presenta
-        </div>
-
-
+<!-- PROGRAMA -->
+<section class="program" id="programa">
+    <div class="wrap">
         <h2>
             Rocking Hits
-            <br>
-            con Mhitzy Chriss
+            <em>con Mhitzy Chriss</em>
         </h2>
 
-
-        <div class="divider"></div>
-
-
-        <h3>
-            Los hits que nunca se fueron.
-        </h3>
-
-
-        <p>
-
-            Un recorrido por los grandes éxitos
-            del rock y pop de los 80s, 90s y 2000s.
-
-            Canciones que marcaron una época,
-            definieron generaciones y todavía
-            forman parte de nuestra historia.
-
-        </p>
-
-
+        <div class="program-text">
+            <h3>Los hits que nunca se fueron.</h3>
+            <p>
+                Un recorrido por los grandes éxitos del rock y pop de los 80s, 90s y 2000s.
+            </p>
+            <p>
+                Canciones que marcaron una época, definieron generaciones y todavía forman parte de nuestra historia.
+            </p>
+            <div class="eras">
+                <span class="era">80s</span>
+                <span class="era">90s</span>
+                <span class="era">2000s</span>
+            </div>
+        </div>
     </div>
-
 </section>
 
-
-
-<!-- =========================================
-     SOBRE RADIO NUEVO OASIS
-========================================= -->
-
-<section class="about-section">
-
-    <div class="about-content">
-
-
-        <span class="section-label">
-            La música nos conecta
-        </span>
-
-
-        <h2>
-            Esto es <span>Nuevo Oasis.</span>
-        </h2>
-
-
-        <p>
-
-            Una radio dedicada al rock & pop
-            que nos acompañó ayer y que seguimos
-            escuchando hoy.
-
-        </p>
-
-
-        <p>
-
-            Aquí encontrarás canciones,
-            recuerdos y esos hits que nunca
-            dejaron de sonar.
-
-        </p>
-
-
-        <div class="music-tags">
-
-            <span>Rock</span>
-
-            <span>Pop</span>
-
-            <span>80s</span>
-
-            <span>90s</span>
-
-            <span>2000s</span>
-
-            <span>Classic Hits</span>
-
+<!-- SOBRE LA RADIO -->
+<section class="about" id="radio">
+    <div class="wrap">
+        <div class="about-logo">
+            <img src="Logo_Nuevo_Oasis.jpg" alt="Radio Nuevo Oasis" loading="lazy">
         </div>
 
-
+        <div>
+            <h2>Esto es Nuevo Oasis</h2>
+            <p>
+                Una radio dedicada al rock & pop que nos acompañó ayer y que seguimos escuchando hoy.
+            </p>
+            <p>
+                Aquí encontrarás canciones, recuerdos y esos hits que nunca dejaron de sonar.
+            </p>
+            <div class="tags">
+                <span>Rock</span>
+                <span>Pop</span>
+                <span>80s</span>
+                <span>90s</span>
+                <span>2000s</span>
+                <span>Classic Hits</span>
+            </div>
+        </div>
     </div>
-
 </section>
 
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
+<!-- FOOTER -->
 <footer>
-
-    <p>
-        © 2026 <strong>RADIO NUEVO OASIS</strong>
-    </p>
-
-    <p>
-        Rock & Pop · 80s · 90s · 2000s
-    </p>
-
+    <div class="wrap">
+        <strong>Radio Nuevo Oasis</strong>
+        <span>© 2026 · Rock & Pop</span>
+    </div>
 </footer>
-```
 
 </body>
-
 </html>
