@@ -8,7 +8,7 @@
 ```
 <title>Radio Nuevo Oasis | Rocking Hits con Mhitzy Chriss</title>
 
-<meta name="description" content="Radio Nuevo Oasis — Rock & Pop de los 80s, 90s y 2000s. Disfruta Rocking Hits con Mhitzy Chriss.">
+<meta name="description" content="Radio Nuevo Oasis — Rock & Pop de los 80s, 90s y 2000s. Rocking Hits con Mhitzy Chriss.">
 
 <style>
     * {
@@ -24,17 +24,26 @@
         line-height: 1.6;
     }
 
-    /* HEADER */
+    /* =========================
+       HERO
+    ========================= */
+
     header {
-        min-height: 85vh;
+        min-height: 75vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         padding: 40px 20px;
+
         background:
-            radial-gradient(circle at center, #242424 0%, #0d0d0d 45%, #050505 100%);
+            radial-gradient(
+                circle at center,
+                #292929 0%,
+                #101010 45%,
+                #050505 100%
+            );
     }
 
     .logo {
@@ -46,11 +55,11 @@
     }
 
     .tagline {
-        font-size: 1rem;
+        font-size: 0.95rem;
         letter-spacing: 4px;
         text-transform: uppercase;
         color: #bdbdbd;
-        margin-bottom: 35px;
+        margin-bottom: 30px;
     }
 
     .intro {
@@ -59,7 +68,11 @@
         font-size: 1.05rem;
     }
 
-    /* VIDEO */
+
+    /* =========================
+       VIDEO
+    ========================= */
+
     .video-section {
         padding: 80px 20px;
         background: #101010;
@@ -94,5 +107,216 @@
     .video-wrapper {
         position: relative;
         width: 100%;
-        aspect-ratio: 16 /
+        aspect-ratio: 16 / 9;
+        background: #000000;
+        overflow: hidden;
+
+        box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: none;
+        top: 0;
+        left: 0;
+    }
+
+
+    /* =========================
+       INFORMACIÓN DEL PROGRAMA
+    ========================= */
+
+    .program {
+        padding: 80px 20px;
+        text-align: center;
+        background: #080808;
+    }
+
+    .program-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .program h2 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    .program h3 {
+        font-size: 1.1rem;
+        font-weight: normal;
+        color: #aaa;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+    }
+
+    .program p {
+        color: #c7c7c7;
+        margin-bottom: 30px;
+    }
+
+    .divider {
+        width: 60px;
+        height: 2px;
+        background: #ffffff;
+        margin: 30px auto;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        padding: 35px 20px;
+        text-align: center;
+        border-top: 1px solid #222;
+        color: #777;
+        font-size: 0.85rem;
+    }
+
+    footer strong {
+        color: #ffffff;
+    }
+
+
+    /* =========================
+       CELULAR
+    ========================= */
+
+    @media (max-width: 600px) {
+
+        .logo {
+            letter-spacing: 4px;
+        }
+
+        .tagline {
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+
+        .video-section,
+        .program {
+            padding: 60px 15px;
+        }
+    }
+
+</style>
 ```
+
+</head>
+
+<body>
+
+```
+<!-- =========================
+     PORTADA
+========================= -->
+
+<header>
+
+    <div class="logo">
+        NUEVO OASIS
+    </div>
+
+    <div class="tagline">
+        Rock & Pop · 80s · 90s · 2000s
+    </div>
+
+    <p class="intro">
+        La música que marcó generaciones, los clásicos que nunca pasan
+        de moda y los hits que siguen haciendo historia.
+    </p>
+
+</header>
+
+
+
+<!-- =========================
+     VIDEO DEL PROGRAMA
+========================= -->
+
+<section class="video-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Programa #01</span>
+
+            <h2>
+                Rocking Hits
+            </h2>
+
+        </div>
+
+
+        <div class="video-wrapper">
+
+            <iframe
+                src="https://drive.google.com/file/d/18O8h6B1RUhVbtjOuzpgdUkMDEmpA_W36/preview"
+                allow="autoplay"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INFORMACIÓN DEL PROGRAMA
+========================= -->
+
+<section class="program">
+
+    <div class="program-content">
+
+        <h2>
+            Rocking Hits con Mhitzy Chriss
+        </h2>
+
+        <h3>
+            Los hits que nunca se fueron.
+        </h3>
+
+        <div class="divider"></div>
+
+        <p>
+            Un recorrido por los grandes éxitos del rock y pop de los
+            80s, 90s y 2000s. Canciones que marcaron una época y que
+            todavía forman parte de nuestra historia.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PIE DE PÁGINA
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>Radio Nuevo Oasis</strong>
+    </p>
+
+    <p>
+        Rock & Pop · 80s · 90s · 2000s
+    </p>
+
+</footer>
+```
+
+</body>
+</html>
